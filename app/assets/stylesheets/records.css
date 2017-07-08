@@ -10,3 +10,8 @@
 a.active {
   color: white !important;
 }
+
+.record-form {
+  margin-left: 25%;
+  margin-right: 25%;
+}

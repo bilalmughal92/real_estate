@@ -1,0 +1,69 @@
+<%= form_for (@record) do |f| %>
+  <div class="record-form">
+    <h3>Add Record</h3>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>City</td>
+          <div class="form-group">
+            <td><%= f.text_field :city, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Town</td>
+          <div class="form-group">
+            <td><%= f.text_field :town, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Area</td>
+          <div class="form-group">
+            <td><%= f.text_field :area, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Society</td>
+          <div class="form-group">
+            <td><%= f.text_field :society, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Block</td>
+          <div class="form-group">
+            <td><%= f.text_field :block, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>House No</td>
+          <div class="form-group">
+            <td><%= f.text_field :house_no, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <div class="form-group">
+            <td><%= f.date_field :date, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Marla</td>
+          <div class="form-group">
+            <td><%= f.text_field :marla, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Square Feet</td>
+          <div class="form-group">
+            <td><%= f.text_field :square_foot, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <div class="form-group">
+            <td><%= f.text_field :status, class: "form-control" %></td>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
