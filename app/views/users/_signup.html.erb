@@ -11,26 +11,26 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="name">Name:</label>
-              <%= f.text_field :name, class: "form-control", placeholder: "Enter name" %>
+              <%= f.text_field :name, class: "form-control", placeholder: "Enter name", required: true %>
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-              <%= f.text_field :email, class: "form-control", placeholder: "Enter email" %>
+              <%= f.text_field :email, class: "form-control", placeholder: "Enter email", required: true %>
             </div>
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+              <%= f.password_field :password, class: "form-control", placeholder: "Enter password", required: true %>
             </div>
             <div class="form-group">
               <label for="contact">Contact:</label>
-              <%= f.text_field :contact, class: "form-control", placeholder: "Enter contact" %>
+              <%= f.text_field :contact, class: "form-control", placeholder: "Enter contact", required: true %>
             </div>
             <div class="row">
               <div class="col-md-2">
                 <%= f.submit "Signup", class: "btn btn-success" %>
               </div>
               <div class="col-md-2">
-                <%= f.submit "Reset", class: "btn btn-danger", id: "form-reset" %>
+                <%= f.submit "Reset", class: "btn btn-danger form-reset" %>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@
 
 <script>
   $(document).ready(function(){
-    $('#form-reset').click(function(event){
+    $('.form-reset').click(function(event){
       event.preventDefault();
       $('#new_admin_user_detail')[0].reset();
     });

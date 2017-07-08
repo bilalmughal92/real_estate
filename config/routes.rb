@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   post "login" => "users#login"
-
-  
   post "signup" => "users#signup"
+  get "signout" => "users#sign_out"
 
+  resources :records
 
 end

@@ -1,0 +1,8 @@
+.container-fluid {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.navbar {
+  border-radius: 0px !important;
+}
