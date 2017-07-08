@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "login" => "users#login"
   post "signup" => "users#signup"
   get "signout" => "users#sign_out"
+  get "contact_us" => "welcome#contact_us"
+  get "about_us" => "welcome#about_us"
 
   resources :records
 

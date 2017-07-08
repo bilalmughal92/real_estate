@@ -7,11 +7,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <nav class='navbar navbar-inverse'>
+        <ul class='nav navbar-nav'>
+          <li><a href='/records' class="active"> Show records</a> </li>
+          <li><a href='/records/new'> Add record</a> </li>
+          <li><a href='/about_us'> About Us </a></li>
+          <li><a href='/contact_us'> Contact Us </a></li>
+        </ul>
+        <ul class='nav navbar-nav pull-right'>
+          <li> <a href='/signout' method='post'><span class="glyphicon glyphicon-user"></span> Sign Out </a></li>
+        </ul>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>

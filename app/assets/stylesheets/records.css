@@ -6,3 +6,7 @@
 .navbar {
   border-radius: 0px !important;
 }
+
+a.active {
+  color: white !important;
+}
