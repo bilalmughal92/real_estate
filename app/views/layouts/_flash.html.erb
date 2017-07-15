@@ -1,0 +1,11 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>" id="flash"><%= value %></div>
+<% end %>
+
+<script>
+  $(document).ready(function(){
+    setTimeout(function() {
+      $('#flash').fadeOut('fast');
+    }, 6000);
+  });
+</script>

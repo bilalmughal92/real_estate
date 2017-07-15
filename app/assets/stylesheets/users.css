@@ -9,3 +9,8 @@
 .heading {
   font-family: serif;
 }
+
+.contact_us, .about_us {
+  padding-left: 30px;
+  padding-right: 30px;
+}

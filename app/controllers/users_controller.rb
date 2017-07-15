@@ -6,16 +6,18 @@ class UsersController < ApplicationController
       session[:current_user_email] = user.first.email
       redirect_to '/records'
     else
-      flash[:error] = "Email or password is not correct."
+      flash[:notice] = "Email or password is not correct."
       redirect_to '/'
     end
   end
 
   def signup
-    if AdminUserDetail.create(user_params)
-      flash[:success] = "Successfully Register."
+    user = AdminUserDetail.create(user_params)
+    if user.errors.present?
+      flash[:notice] = user.errors.full_messages.first
     else
-      flash[:error] = "Cannot Signup Admin User."
+      flash[:success] = "Successfully Register."
+      session[:current_user_email] = user.email
     end
     redirect_to '/'
   end

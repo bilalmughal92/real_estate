@@ -6,31 +6,31 @@
         <tr>
           <td>City</td>
           <div class="form-group">
-            <td><%= f.text_field :city, class: "form-control" %></td>
+            <td><%= f.select(:city, Record.cities, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
         <tr>
           <td>Town</td>
           <div class="form-group">
-            <td><%= f.text_field :town, class: "form-control" %></td>
+            <td><%= f.select(:town, Record.towns, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
         <tr>
           <td>Area</td>
           <div class="form-group">
-            <td><%= f.text_field :area, class: "form-control" %></td>
+            <td><%= f.select(:area, Record.areas, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
         <tr>
           <td>Society</td>
           <div class="form-group">
-            <td><%= f.text_field :society, class: "form-control" %></td>
+            <td><%= f.select(:society, Record.societies, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
         <tr>
           <td>Block</td>
           <div class="form-group">
-            <td><%= f.text_field :block, class: "form-control" %></td>
+            <td><%= f.select(:block, Record.blocks, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
         <tr>
@@ -60,7 +60,7 @@
         <tr>
           <td>Status</td>
           <div class="form-group">
-            <td><%= f.text_field :status, class: "form-control" %></td>
+            <td><%= f.select(:status, Record.statuses, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
       </tbody>
