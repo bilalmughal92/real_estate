@@ -1,6 +1,6 @@
 <body>
   <div class="modal fade" id="login" role="dialog">
-    <%= form_for AdminUserDetail.new, url: '/login' do |f| %>
+    <%= form_for AdminUserDetail.new, url: '/login', html: {id: "login_form"} do |f| %>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -22,7 +22,7 @@
                 <%= f.submit "Login", class: "btn btn-success" %>
               </div>
               <div class="col-md-2">
-                <%= f.submit "Reset", class: "btn btn-danger form-reset" %>
+                <%= f.submit "Reset", class: "btn btn-danger form-reset", id: "signin_form_reset" %>
               </div>
             </div>
           </div>
@@ -37,9 +37,9 @@
 
 <script>
   $(document).ready(function(){
-    $('.form-reset').click(function(event){
+    $('#signin_form_reset').click(function(event){
       event.preventDefault();
-      $('#new_admin_user_detail')[0].reset();
+      $('#login_form')[0].reset();
     });
   });
 </script>
