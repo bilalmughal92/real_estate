@@ -15,11 +15,7 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.create(record_params)
-    respond_to do |format|
-      format.html
-      format.js
-      format.json
-    end
+    redirect_to '/records'
   end
 
   def edit
@@ -27,16 +23,14 @@ class RecordsController < ApplicationController
   end
 
   def update
-    @record = Record.update(record_params)
-    respond_to do |format|
-      format.html
-      format.js
-      format.json
-    end
+    @record = Record.find(params[:id])
+    @record.update(record_params)
+    redirect_to '/records'
   end
 
   def destroy
     @record = Record.find(params[:id])
+    @record.destroy
     redirect_to '/records'
   end
 

@@ -1,1 +1,39 @@
-
+<h2>Records</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Town</th>
+      <th>Area</th>
+      <th>Society</th>
+      <th>Block</th>
+      <th>House No</th>
+      <th>Date</th>
+      <th>Marla</th>
+      <th>Squar Feet</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.city %></td>
+        <td><%= record.town %></td>
+        <td><%= record.area %></td>
+        <td><%= record.society %></td>
+        <td><%= record.block %></td>
+        <td><%= record.house_no %></td>
+        <td><%= record.date %></td>
+        <td><%= record.marla %></td>
+        <td><%= record.square_foot %></td>
+        <td><%= record.status %></td>
+        <td>
+          <%= link_to "Edit", edit_record_path(record) %>
+          |
+          <%= link_to "Destroy", "/records/#{record.id}", method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
