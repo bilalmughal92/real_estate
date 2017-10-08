@@ -29,7 +29,7 @@
         <td><%= record.square_foot %></td>
         <td><%= record.status %></td>
         <td>
-          <%= link_to "Edit", edit_record_path(record) %>
+          <%= link_to "Edit", "/records/#{record.id}/edit" %>
           |
           <%= link_to "Destroy", "/records/#{record.id}", method: :delete %>
         </td>

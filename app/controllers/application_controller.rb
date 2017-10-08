@@ -4,10 +4,4 @@ class ApplicationController < ActionController::Base
   def current_user
     AdminUserDetail.find_by(email: session[:current_user_email])
   end
-
-  def check_current_user
-    if current_user.blank?
-      redirect_to '/'
-    end
-  end
 end

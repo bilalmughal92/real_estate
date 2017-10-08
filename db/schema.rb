@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708115252) do
+ActiveRecord::Schema.define(version: 20171008092435) do
 
-  create_table "admin_user_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "admin_user_details", force: :cascade do |t|
     t.string "name"
     t.string "password"
     t.string "email"
@@ -21,7 +21,16 @@ ActiveRecord::Schema.define(version: 20170708115252) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "clients", force: :cascade do |t|
+    t.string "full_name"
+    t.string "email"
+    t.string "contact"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
     t.string "city"
     t.string "town"
     t.string "area"
@@ -36,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170708115252) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_details", force: :cascade do |t|
     t.string "name"
     t.string "password"
     t.string "email"
@@ -46,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170708115252) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_types", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
