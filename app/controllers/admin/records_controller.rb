@@ -1,4 +1,5 @@
-class Admin::RecordsController < ApplicationController
+class Admin::RecordsController < Admin::BaseController
+  layout "admin"
 
   def index
     @records = Record.all

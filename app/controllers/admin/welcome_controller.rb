@@ -1,4 +1,4 @@
-class Admin::WelcomeController < ApplicationController
+class Admin::WelcomeController < Admin::BaseController
 	layout :authentication
 
   def index
@@ -7,21 +7,13 @@ class Admin::WelcomeController < ApplicationController
     end
   end
 
-  def about_us
-    
-  end
-
-  def contact_us
-    
-  end
-
   private
 
   def authentication
     if action_name == "index"
       'authentication'
     else
-      "application"
+      "admin"
     end
   end
 

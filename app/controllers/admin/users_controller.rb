@@ -1,4 +1,5 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseController
+  layout "admin"
 
   def login
     user = AdminUserDetail.where(email: user_params[:email], password: user_params[:password])
