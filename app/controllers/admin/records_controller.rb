@@ -1,16 +1,21 @@
-class RecordsController < ApplicationController
+class Admin::RecordsController < ApplicationController
 
   def index
     @records = Record.all
   end
 
   def new
-    @record = Record.new
+    if current_user.present?
+      @record = Record.new
+    else
+      flash[:notice] = "You are not authorized."
+      redirect_to "/admin/records"
+    end
   end
 
   def create
     @record = Record.create(record_params)
-    redirect_to '/records'
+    redirect_to '/admin/records'
   end
 
   def edit
@@ -20,13 +25,13 @@ class RecordsController < ApplicationController
   def update
     @record = Record.find(params[:id])
     @record.update(record_params)
-    redirect_to '/records'
+    redirect_to '/admin/records'
   end
 
   def destroy
     @record = Record.find(params[:id])
     @record.destroy
-    redirect_to '/records'
+    redirect_to '/admin/records'
   end
 
   private

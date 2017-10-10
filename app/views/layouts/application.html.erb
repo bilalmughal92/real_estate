@@ -14,12 +14,19 @@
       <nav class='navbar navbar-inverse'>
         <ul class='nav navbar-nav'>
           <li><a href='/records'> Show records</a> </li>
-          <li><a href='/records/new'> Add record</a> </li>
+          <% current_user = AdminUserDetail.find_by(email: session[:current_user_email]) %>
+          <% if current_user.present? %>
+            <li><a href='records/new'> Add record</a> </li>
+          <% end %>
           <li><a href='/about_us'> About Us </a></li>
           <li><a href='/contact_us'> Contact Us </a></li>
         </ul>
         <ul class='nav navbar-nav pull-right'>
-          <li> <a href='/signout' method='post'><span class="glyphicon glyphicon-user"></span> Sign Out </a></li>
+          <% if current_user.present? %>
+            <li> <a href='/admin/signout' method='post'><span class="glyphicon glyphicon-user"></span> Sign Out </a></li>
+          <% else %>
+            <li> <a href='/signout' method='post'><span class="glyphicon glyphicon-user"></span> Sign Out </a></li>
+          <% end %>
         </ul>
       </nav>
       <%= yield %>

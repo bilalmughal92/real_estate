@@ -1,13 +1,13 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
 
   def login
     user = AdminUserDetail.where(email: user_params[:email], password: user_params[:password])
     if user.present?
       session[:current_user_email] = user.first.email
-      redirect_to '/records'
+      redirect_to '/admin/records'
     else
       flash[:notice] = "Email or password is not correct."
-      redirect_to '/'
+      redirect_to '/admin'
     end
   end
 
@@ -19,12 +19,12 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully Register."
       session[:current_user_email] = user.email
     end
-    redirect_to '/'
+    redirect_to '/admin'
   end
 
   def sign_out
     session[:current_user_email] = nil
-    redirect_to '/'
+    redirect_to '/admin'
   end
 
   private
