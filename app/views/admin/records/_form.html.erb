@@ -63,6 +63,24 @@
             <td><%= f.select(:status, Record.statuses, {}, { :class => 'form-control' }) %></td>
           </div>
         </tr>
+        <tr>
+          <td>Image</td>
+          <div class="form-group">
+            <td><%= f.file_field :image %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <div class="form-group">
+            <td><%= f.text_field :price, class: "form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <div class="form-group">
+            <td><%= f.text_field :description, class: "form-control" %></td>
+          </div>
+        </tr>
       </tbody>
     </table>
     <div class="form-group" style="text-align: center;">

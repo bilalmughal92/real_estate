@@ -1,4 +1,6 @@
 class Record < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
   
   def self.cities
     ['Lahore', 'Islamabad', 'Karachi']
