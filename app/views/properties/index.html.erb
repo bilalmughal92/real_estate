@@ -1,1 +1,97 @@
-Properties list
+<head>
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <script src="js/jquery-1.6.js" ></script>
+  <script src="js/cufon-yui.js"></script>
+  <script src="js/cufon-replace.js"></script>
+  <script src="js/Didact_Gothic_400.font.js"></script>
+  <script src="js/jquery.nivo.slider.pack.js"></script>
+  <script src="js/atooltip.jquery.js"></script>
+  <script src="js/jquery.jqtransform.js" ></script>
+  <script src="js/script.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+</head>
+<body id="page1">
+<!-- content -->
+<div class="body2">
+  <div class="main">
+    <section id="content">
+      <div class="wrapper">
+        <article class="col1">
+          <div id="slider"> <img src="images/img1.jpg" alt="" title="<strong>Villa Neverland, 2006</strong><span>9 rooms, 3 baths, 6 beds, building size: 5000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 600 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> <img src="images/img2.jpg" alt="" title="<strong>Villa Lipsum, 2008</strong><span>8 rooms, 4 baths, 4 beds, building size: 4500 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 500 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> <img src="images/img3.jpg" alt="" title="<strong>Villa Dolor Sid, 2007</strong><span>11 rooms, 3 baths, 5 beds, building size: 6000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 650 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> <img src="images/img4.jpg" alt="" title="<strong>Villa Nemo Enim, 2010</strong><span>5 rooms, 2 baths, 4 beds, building size: 3000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 400 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> <img src="images/img5.jpg" alt="" title="<strong>Villa Nam Libero, 2003</strong><span>7 rooms, 4 baths, 6 beds, building size: 7000 sq. ft. &nbsp; &nbsp; &nbsp; Price: $ 700 000 &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>"> </div>
+        </article>
+        <%= render partial: "search_properties" %>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="body3">
+  <div class="main">
+    <section id="content2">
+      <div class="wrapper">
+        <article class="col1">
+          <div class="pad2">
+            <h2>Remodeling Rooms</h2>
+            <div class="wrapper pad_bot3">
+              <figure class="left marg_right1"><img src="images/page1_img4.jpg" alt=""></figure>
+              <p class="pad_bot1"><strong class="color2">2006, 3 baths, 6 beds, building size: 5000 sq. ft.<br>
+                Price: <span class="color1">$ 600 000</span></strong></p>
+              <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
+              <a href="#" class="button">Read more</a> </div>
+            <div class="wrapper">
+              <figure class="left marg_right1"><img src="images/page1_img5.jpg" alt=""></figure>
+              <p class="pad_bot1"><strong class="color2">2006, 3 baths, 6 beds, building size: 5000 sq. ft.<br>
+                Price: <span class="color1">$ 600 000</span></strong></p>
+              <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
+              <a href="#" class="button">Read more</a> </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="body4">
+  <div class="main">
+    <!-- footer -->
+    <footer> <span class="call">Contact Us: <span>1-800-567-8934</span></span>
+    </footer>
+  </div>
+</div>
+<script>Cufon.now();</script>
+<script>
+$(window).load(function () {
+    $('#slider').nivoSlider({
+        effect: 'sliceUpDown', //Specify sets like: 'fold,fade,sliceDown, sliceDownLeft, sliceUp, sliceUpLeft, sliceUpDown, sliceUpDownLeft'
+        slices: 17,
+        animSpeed: 500,
+        pauseTime: 6000,
+        startSlide: 0, //Set starting Slide (0 index)
+        directionNav: false, //Next & Prev
+        directionNavHide: false, //Only show on hover
+        controlNav: true, //1,2,3...
+        controlNavThumbs: false, //Use thumbnails for Control Nav
+        controlNavThumbsFromRel: false, //Use image rel for thumbs
+        controlNavThumbsSearch: '.jpg', //Replace this with...
+        controlNavThumbsReplace: '_thumb.jpg', //...this in thumb Image src
+        keyboardNav: true, //Use left & right arrows
+        pauseOnHover: true, //Stop animation while hovering
+        manualAdvance: false, //Force manual transitions
+        captionOpacity: 1, //Universal caption opacity
+        beforeChange: function () {
+            $('.nivo-caption').animate({
+                bottom: '-110'
+            }, 400, 'easeInBack')
+        },
+        afterChange: function () {
+            Cufon.refresh();
+            $('.nivo-caption').animate({
+                bottom: '-20'
+            }, 400, 'easeOutBack')
+        },
+        slideshowEnd: function () {} //Triggers after all slides have been shown
+    });
+    Cufon.refresh();
+});
+</script>
+</body>
