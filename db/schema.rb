@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20171010175915) do
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_admin"
   end
 
   create_table "clients", force: :cascade do |t|
