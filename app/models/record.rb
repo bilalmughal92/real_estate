@@ -1,5 +1,6 @@
 class Record < ApplicationRecord
   has_many :orders
+  has_many :feedbacks
 
   mount_uploader :image, ImageUploader
   

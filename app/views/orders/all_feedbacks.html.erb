@@ -1,0 +1,21 @@
+<h2>Records</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="width: 30px;">Property</th>
+      <th>Feedback</th>
+      <th style="width: 30px;">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+        <td><%= image_tag("#{feedback.record.image.url(:thumb)}") %></td>
+        <td><%= feedback.msg %></td>
+        <td>
+          <%= link_to "Delete Feedback", "feedbacks/#{feedback.id}/delete_feedback" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -18,8 +18,18 @@
         <td><%= order.record.get_status %></td>
         <td>
           <%= link_to "Delete Order", "orders/#{order.id}", method: :delete %>
+          |
+          <%#= link_to "FeedBack", "#", class: "feedback", id: "#{order.id}" %>
+          <a href="#" role="button" data-toggle="modal" class="feedback btn btn-link " order-id="<%=order.id%>" record-id="<%=order.record.id%>" data-target="#feedback">Feedback</a>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= render partial: "add_feedback" %>
+<script>
+  $('.feedback').click(function(event){
+    $('#feedback_order_id').val($(this).attr("order-id"))
+    $('#feedback_record_id').val($(this).attr("record-id"))
+  });
+</script>

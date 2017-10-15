@@ -1,0 +1,26 @@
+  <div class="modal fade" id="feedback" role="dialog">
+    <%= form_for Feedback.new, url: "/orders/feedback" do |f| %>
+      <%= f.hidden_field :client_id, value: @current_client.id %>
+      <%= f.hidden_field :order_id, value: "" %>
+      <%= f.hidden_field :record_id, value: "" %>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;
+            </button>
+            <h4 class="modal-title">FeedBack</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="name">Message:</label>
+              <%= f.text_area :msg, class: "form-control", placeholder: "Enter Feedback", required: true %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit "Feedback", class: "btn btn-success" %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

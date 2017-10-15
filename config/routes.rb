@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get "signout" => "users#sign_out"
   get "contact_us" => "welcome#contact_us"
   get "about_us" => "welcome#about_us"
+  get "feedback" => "orders#all_feedbacks"
+  get "feedbacks/:id/delete_feedback" => "orders#delete_feedback"
   resources :clients
   resources :properties do
     collection do
@@ -24,6 +26,10 @@ Rails.application.routes.draw do
   resources :orders do
     member do
       get 'place_order'
+      post 'feedback'
+    end
+    collection do
+      post 'feedback'
     end
   end
 end
