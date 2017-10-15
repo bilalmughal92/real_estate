@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   get "contact_us" => "welcome#contact_us"
   get "about_us" => "welcome#about_us"
   resources :clients
-  resources :properties
+  resources :properties do
+    collection do
+      post 'search'
+    end
+  end
 end

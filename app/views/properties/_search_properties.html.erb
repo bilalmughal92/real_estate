@@ -1,60 +1,65 @@
 <article class="col2">
-  <form id="form_1" action="#" method="post">
+  <form id="form_1" action="/properties/search" method="post">
     <div class="pad1">
       <h3>Find Your Property</h3>
-      <div class="row">City:<br>
-        <input type="text" class="input">
+      <div class="row_select">Select City:<br>
+        <select class="city">
+          <option>&nbsp;</option>
+          <% Record.cities.each do |city| %>
+            <option><%= city %></option>
+          <% end %>
+        </select>
       </div>
       <div class="row_select">Select Town:<br>
-        <select>
+        <select class="town">
           <option>&nbsp;</option>
-          <option>...</option>
-          <option>...</option>
+          <% Record.towns.each do |town| %>
+            <option><%= town %></option>
+          <% end %>
         </select>
       </div>
       <div class="row_select">
-        <div class="cols"> Price From:<br>
-          <select>
-            <option>&nbsp;</option>
-            <option>...</option>
-            <option>...</option>
-          </select>
+        <div class="row"> Price From:<br>
+          <%= text_field_tag "price_from" %>
         </div>
-        <div class="cols pad_left1"> Price to:<br>
-          <select>
-            <option>&nbsp;</option>
-            <option>...</option>
-            <option>...</option>
-          </select>
+        <div class="row"> Price to:<br>
+          <%= text_field_tag "price_to" %>
         </div>
       </div>
       <div class="row_select">
-        <div class="cols"> Square Feet From:<br>
-          <select>
-            <option>&nbsp;</option>
-            <option>...</option>
-            <option>...</option>
-          </select>
+        <div class="row"> Square Feet From:<br>
+          <%= text_field_tag "square_feet_from" %>
         </div>
-        <div class="cols pad_left1"> Square Feet to:<br>
-          <select>
-            <option>&nbsp;</option>
-            <option>...</option>
-            <option>...</option>
-          </select>
+        <div class="row"> Square Feet To:<br>
+          <%= text_field_tag "square_feet_to" %>
         </div>
       </div>
       <div class="row_select pad_bot1">
-        <div class="cols" style="visibility: hidden;"> Radius:<br>
-          <select>
-            <option>&nbsp;</option>
-            <option>...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="cols pad_left1"> <a href="#" class="button">Search</a> </div>
+        <div class="cols pad_left1"> <a href="#" id="search_btn" class="button">Search</a> </div>
       </div>
       Know exactly what you want? <br>
       Try our <a href="#">Advanced Search</a> </div>
   </form>
 </article>
+
+<script>
+  $('#search_btn').click(function(event){
+    event.preventDefault();
+    debugger
+    town = $('.town').val();
+    city = $('.city').val();
+    price_from = $('#price_from').val();
+    price_to = $('#price_to').val();
+    square_feet_from = $('#square_feet_from').val();
+    square_feet_to = $('#square_feet_to').val();
+    $.ajax({
+      url: "/properties/search",
+      type: "POST",
+      data: {city: city, town: town, price_to: price_to, price_from: price_from, square_feet_from: square_feet_from, square_feet_to, square_feet_to},
+      dataType: "html",
+      success: function(data) {
+        $('.body3').html(data);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="main" style="margin: 0px !important;">
+      <section id="content2">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad2">
+              <h2>For Rent</h2>
+              <% @rent_records.each do |record| %>
+                <div class="wrapper pad_bot3">
+                  <figure class="left marg_right1"><img src="<%=record["image"].url(:thumb)%>" alt=""></figure>
+                  <p class="pad_bot1"><strong class="color2"><%=record["date"]%>, <%=record["description"]%>, building size: <%=record["square_foot"]%> sq. ft.<br>
+                    Price: <span class="color1">Rs <%=record["price"]%></span></strong></p>
+                  <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
+                  <a href="#" class="button">Read more</a>
+                </div>
+              <% end %>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="main" style="margin: 0px !important;">
+      <section id="content2">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad2">
+              <h2>For Sale</h2>
+              <% @sale_records.each do |record| %>
+                <div class="wrapper pad_bot3">
+                  <figure class="left marg_right1"><img src="<%=record["image"].url(:thumb)%>" alt=""></figure>
+                  <p class="pad_bot1"><strong class="color2"><%=record["date"]%>, <%=record["description"]%>, building size: <%=record["square_foot"]%> sq. ft.<br>
+                    Price: <span class="color1">Rs <%=record["price"]%></span></strong></p>
+                  <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
+                  <a href="#" class="button">Read more</a>
+                </div>
+              <% end %>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
