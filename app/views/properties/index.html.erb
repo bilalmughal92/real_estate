@@ -21,7 +21,7 @@
         <article class="col1">
           <div id="slider">
             <% @records.each do |record| %>
-              <img src="<%=record.image.url%>" alt="" title="<strong><%=record.society%>, <%=record.date.year%></strong><span><%=record.description%>, building size: <%=record.square_foot%> sq. ft. &nbsp; &nbsp; &nbsp; Price: Rs <%=record.price%> &nbsp; &nbsp; &nbsp; <a href='#'>Read more</a></span>">
+              <img src="<%=record.image.url%>" alt="" title="<strong><%=record.society%>, <%=record.date&.year%></strong><span><%=record.description%>, building size: <%=record.square_foot%> sq. ft. &nbsp; &nbsp; &nbsp; Price: Rs <%=record.price%> &nbsp; &nbsp; &nbsp; </span>">
             <% end %>
           </div>
         </article>
@@ -45,7 +45,7 @@
                     <p class="pad_bot1"><strong class="color2"><%=record.date%>, <%=record.description%>, building size: <%=record.square_foot%> sq. ft.<br>
                       Price: <span class="color1">Rs <%=record.price%></span></strong></p>
                     <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
-                    <a href="#" class="button">Read more</a>
+                    <a href="/orders/<%=record.id%>/place_order" class="button">Place Order</a>
                   </div>
                 <% end %>
               </div>
@@ -67,7 +67,7 @@
                     <p class="pad_bot1"><strong class="color2"><%=record.date%>, <%=record.description%>, building size: <%=record.square_foot%> sq. ft.<br>
                       Price: <span class="color1">Rs <%=record.price%></span></strong></p>
                     <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
-                    <a href="#" class="button">Read more</a>
+                    <a href="/orders/<%=record.id%>/place_order" class="button">Place Order</a>
                   </div>
                 <% end %>
               </div>

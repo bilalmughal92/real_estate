@@ -21,4 +21,9 @@ Rails.application.routes.draw do
       post 'search'
     end
   end
+  resources :orders do
+    member do
+      get 'place_order'
+    end
+  end
 end

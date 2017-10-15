@@ -1,4 +1,5 @@
 class Record < ApplicationRecord
+  has_many :orders
 
   mount_uploader :image, ImageUploader
   
@@ -24,5 +25,9 @@ class Record < ApplicationRecord
 
   def self.statuses
     ['Rental', 'For Sale']
+  end
+
+  def get_status
+    status == "Rental" ? "Rent" : "Purchase"
   end
 end
