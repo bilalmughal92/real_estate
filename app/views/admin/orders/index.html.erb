@@ -1,0 +1,23 @@
+<h2>Records</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="width: 30px;">Property</th>
+      <th>Order Date</th>
+      <th>Order Status</th>
+      <th>User's Email</th>
+      <th>Rent/Purchase</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= image_tag("#{order.record&.image&.url(:thumb)}") %></td>
+        <td><%= order.order_date %></td>
+        <td><%= order.status %></td>
+        <td><%= order.client&.email %></td>
+        <td><%= order.record&.get_status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

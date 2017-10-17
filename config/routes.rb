@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post "signup" => "users#signup"
     get "signout" => "users#sign_out"
     resources :records
+    resources :orders
   end
   root to: "welcome#index"
   post "login" => "users#login"
