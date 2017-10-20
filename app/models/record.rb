@@ -31,4 +31,8 @@ class Record < ApplicationRecord
   def get_status
     status == "Rental" ? "Rent" : "Purchase"
   end
+
+  def get_image
+    self.image_url(:fit_screen).present? ? self.image_url(:fit_screen) : self.image_url
+  end
 end

@@ -21,7 +21,7 @@
         <article class="col1">
           <div id="slider">
             <% @records.each do |record| %>
-              <img src="<%=record.image.url%>" alt="" title="<strong><%=record.society%>, <%=record.date&.year%></strong><span><%=record.description%>, building size: <%=record.square_foot%> sq. ft. &nbsp; &nbsp; &nbsp; Price: Rs <%=record.price%> &nbsp; &nbsp; &nbsp; </span>">
+              <img src="<%=record.get_image%>" alt="" title="<strong><%=record.society%>, <%=record.date&.year%></strong><span><%=record.description%>, building size: <%=record.square_foot%> sq. ft. &nbsp; &nbsp; &nbsp; Price: Rs <%=record.price%> &nbsp; &nbsp; &nbsp; </span>">
             <% end %>
           </div>
         </article>
@@ -44,7 +44,7 @@
                     <figure class="left marg_right1"><img src="<%=record.image.url(:thumb)%>" alt=""></figure>
                     <p class="pad_bot1"><strong class="color2"><%=record.date%>, <%=record.description%>, building size: <%=record.square_foot%> sq. ft.<br>
                       Price: <span class="color1">Rs <%=record.price%></span></strong></p>
-                    <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
+                    <p class="pad_bot2"> Every detail was carefully selected and quality crafted. Highlights include Lutron light and shade systems, heated bathroom floors, concrete first-level and hallway floors, teak wood bedroom flooring, troweled plaster walls and ceilings, artwork  display lighting, hidden mechanicals, a climate-control system, high-tech security system, and spacious corner rooms that overlook the city.</p>
                     <a href="/orders/<%=record.id%>/place_order" class="button">Place Order</a>
                   </div>
                 <% end %>
@@ -66,7 +66,7 @@
                     <figure class="left marg_right1"><img src="<%=record.image.url(:thumb)%>" alt=""></figure>
                     <p class="pad_bot1"><strong class="color2"><%=record.date%>, <%=record.description%>, building size: <%=record.square_foot%> sq. ft.<br>
                       Price: <span class="color1">Rs <%=record.price%></span></strong></p>
-                    <p class="pad_bot2"> Massa dictum ementum velitumo od consequat ante oremsumas ame consectetueraipiscing eliteli ueedlorAliquam conguen nisauris accusalla vel deinol tincidunt ligula magna semper ipsum.</p>
+                    <p class="pad_bot2"> Every detail was carefully selected and quality crafted. Highlights include Lutron light and shade systems, heated bathroom floors, concrete first-level and hallway floors, teak wood bedroom flooring, troweled plaster walls and ceilings, artwork  display lighting, hidden mechanicals, a climate-control system, high-tech security system, and spacious corner rooms that overlook the city.</p>
                     <a href="/orders/<%=record.id%>/place_order" class="button">Place Order</a>
                   </div>
                 <% end %>
