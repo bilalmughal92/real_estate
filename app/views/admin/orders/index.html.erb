@@ -7,6 +7,7 @@
       <th>Order Status</th>
       <th>User's Email</th>
       <th>Rent/Purchase</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,7 @@
         <td><%= order.status %></td>
         <td><%= order.client&.email %></td>
         <td><%= order.record&.get_status %></td>
+        <td><%= link_to "Delete Order", "orders/#{order.id}", method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
